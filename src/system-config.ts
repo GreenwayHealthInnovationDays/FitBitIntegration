@@ -31,6 +31,7 @@ const barrels: string[] = [
   'app/shared',
   'app/fitbit-friends',
   'app/fitbit-activity',
+  'app/fitbit-common',
   /** @cli-barrel */
 ];
 

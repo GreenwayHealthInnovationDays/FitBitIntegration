@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FitbitFriendsComponent } from './fitbit-friends'
 import { FitbitActivityComponent } from './fitbit-activity'
+import { Activity, Friend } from './fitbit-common'
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,7 @@ import { FitbitActivityComponent } from './fitbit-activity'
   styleUrls: ['fit-bit-api-integration.component.css'],
   directives: [FitbitFriendsComponent, FitbitActivityComponent]
 })
-export class FitBitApiIntegrationAppComponent  implements OnInit {
+export class FitBitApiIntegrationAppComponent implements OnInit {
   title = 'Fitbit Dashboard';
   data = new DashboarData;
   ngOnInit() {
@@ -31,16 +32,4 @@ export class DashboarData {
   dashboardUser: string;
   activities: Array<Activity>;
   friends: Array<Friend>;
-}
-
-export class Activity {
-  name: string;
-  durationInMin: number;
-}
-
-export class Friend {
-  id: number;
-  firstName: string;
-  lastName: string;
-  username: string;
 }

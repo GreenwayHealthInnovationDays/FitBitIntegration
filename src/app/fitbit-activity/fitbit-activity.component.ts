@@ -9,8 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FitbitActivityComponent implements OnInit {
 
   constructor() {}
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
+  steps: number;
 }
