@@ -11,19 +11,36 @@ import { FitbitActivityComponent } from './fitbit-activity'
 })
 export class FitBitApiIntegrationAppComponent  implements OnInit {
   title = 'Fitbit Dashboard';
-  data = DashboarData;
+  data = new DashboarData;
   ngOnInit() {
-    this.data.prototype.activities = [];
-    this.data.prototype.steps = 0;
+    this.data.dashboardUser = "Ben";
+    this.data.activities = [
+      { name: "Running", durationInMin: 60 },
+      { name: "Swimming", durationInMin: 20 },
+      { name: "Cycling", durationInMin: 120 }
+    ];
+    this.data.friends = [ 
+      { firstName: "Bob", lastName: "Smith", username: "Bobo", id: 1 },
+      { firstName: "Tina", lastName: "Turtle", username: "TTurtle", id: 2 },
+      { firstName: "Arnold", lastName: "Peterson", username: "apeterson", id: 3 }
+    ];
   }
 }
 
 export class DashboarData {
-  steps: number;
+  dashboardUser: string;
   activities: Array<Activity>;
+  friends: Array<Friend>;
 }
 
 export class Activity {
   name: string;
   durationInMin: number;
+}
+
+export class Friend {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
 }
